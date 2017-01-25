@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import { Link } from 'react-router';
+import { fetchHomeData } from 'actions/home';
 
 import styles from './Home.scss';
 
@@ -14,6 +15,8 @@ export default class Home extends Component {
         );
     }
 }
+
+Home.fetchData = ({store}) => store.dispatch(fetchHomeData());
 
 Home.propTypes = {
 
