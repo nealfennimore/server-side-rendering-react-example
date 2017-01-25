@@ -1,0 +1,13 @@
+@mixin create-context($classes, $same-level: false) {
+    @each $class in $classes{
+        @if($same-level == true){
+            &:global(.#{$class}) {
+                @content;
+            }
+        } @else {
+            :global(.#{$class}) & {
+                @content;
+            }
+        }
+    }
+}

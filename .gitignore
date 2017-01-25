@@ -1,0 +1,9 @@
+node_modules
+dev
+*.log
+public/*
+server/build/*
+buildStamp.js
+config.js
+client/clientConfig.js
+.DS_Store

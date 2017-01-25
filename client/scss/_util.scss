@@ -1,0 +1,28 @@
+@function vertical-rhythm($n) {
+    $vr: 0;
+    $count: 0;
+
+    @if $n <= $global-font-base {
+        @return (
+            ratio: $global-font-base / $global-font-size,
+            count: 1
+        );
+    } @else {
+        @while $n >= $vr {
+            $vr: $vr + $global-font-base;
+            $count: $count + 1;
+        }
+        @return (
+            ratio: $vr / $n,
+            count: $count
+        );
+    }
+}
+
+@function remy($n){
+    @return $n+rem;
+}
+
+@function emy($n){
+    @return $n+em;
+}
